@@ -7,10 +7,15 @@ console.log('JS #1. Домашнє завдання. Основи JavaScript: П
  */
 
 // ім'я змінної: myNum, значення: 10
+let myNum = 10;
 // ім'я змінної: myStr, значення: 'some string'
+let myStr = 'some string';
 // ім'я змінної: myBool, значення: true
+let myBool = true;
 // ім'я змінної: myArr, значення: 1, 2, 3, 4, 5
+let myArr = [1, 2, 3, 4, 5];
 // ім'я змінної: myObj, значення: first: 'First Name', last: 'Last Name'
+let myObj = { first: 'First Name', last: 'Last Name' };
 
 /*
  * #2
@@ -20,6 +25,7 @@ console.log('JS #1. Домашнє завдання. Основи JavaScript: П
  */
 
 // decimal2
+let decimal2 = myNum.toFixed(2);
 
 /*
  * #3
@@ -29,3 +35,5 @@ console.log('JS #1. Домашнє завдання. Основи JavaScript: П
  */
 
 // myBigInt
+let myBigInt = 123n;
+myBigInt++;

@@ -50,3 +50,44 @@ console.log('#21. JavaScript homework: читацький клуб')
  * Викличте функцію для memberObj і виведіть результат.
  * Вкладені об'єкти в цьому завданні не розглядаються.
  */
+
+
+const memberObj = {
+  name: 'Olena',
+  yearOfBirth: 1998,
+  city: 'Львів',
+  booksPerMonth: 3,
+  favoriteGenre: 'фентезі',
+}
+
+// Завдання 1
+function memberCard(name, yearOfBirth, favoriteGenre, city = 'Київ') {
+  let result = '';
+  if (typeof name !== 'undefined') {
+    result += `My name is ${name}. `;
+  }
+  if (typeof yearOfBirth !== 'undefined') {
+    let age = new Date().getFullYear() - yearOfBirth;
+    result += `I am ${age} years old. `;
+  }
+  if (typeof favoriteGenre !== 'undefined') {
+    result += `I read ${favoriteGenre}. `;
+  }
+  result += `I live in ${city}.`;
+  return result;
+}
+
+console.log(memberCard(memberObj.name, memberObj.yearOfBirth, memberObj.favoriteGenre, memberObj.city));
+console.log(memberCard(memberObj.name, memberObj.yearOfBirth, memberObj.favoriteGenre));
+console.log(memberCard(memberObj.name, memberObj.yearOfBirth, undefined, memberObj.city));
+
+// Завдання 2
+function describeMember(memberObj) {
+  let result = '';
+  for (let key in memberObj) {
+    result += `${key}: ${memberObj[key]}; `;
+  }
+  return result;
+}
+
+console.log(describeMember(memberObj));

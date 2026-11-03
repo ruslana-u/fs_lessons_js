@@ -121,12 +121,15 @@ orderObj.city = 'Київ';
 console.log(orderObj.customer.firstName + ' ' + orderObj.customer.lastName + ' from ' + orderObj.city);
 
 // Крок 2
-console.log('tempNote' in orderObj);
-delete orderObj.tempNote;
-console.log('tempNote' in orderObj);
+if ('tempNote' in orderObj) {
+  delete orderObj.tempNote;
+}
+if (!('tempNote' in orderObj)) {
+  console.log("Властивість 'tempNote' не знайдена");
+}
 
 // Крок 3
-let backupOrder = JSON.parse(JSON.stringify(orderObj));
+let backupOrder = structuredClone(orderObj);
 backupOrder.customer.firstName = 'Ann';
 console.log(backupOrder.customer.firstName);
 console.log(orderObj.customer.firstName);

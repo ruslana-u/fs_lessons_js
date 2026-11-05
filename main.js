@@ -114,4 +114,99 @@ console.log('#5. JavaScript homework example file')
 // console.log(myTriple(4)) // = myMul(3, 4) = 12
 // console.log(myTriple(5)) // = myMul(3, 5) = 15
 
-export { counter, counterFactory, myPow, myMax, myMul, myDouble, myTriple }
+
+
+// export { counter, counterFactory, myPow, myMax, myMul, myDouble, myTriple }
+
+
+
+// Завдання 1
+console.log('Завдання 1:');
+
+const counter = (function () {
+  let count = 0;
+  return function (n) {
+    if (n !== undefined) {
+      count = n;
+    }
+    return count++;
+  };
+})();
+
+console.log(counter());
+console.log(counter());
+console.log(counter(100));
+console.log(counter());
+console.log(counter());
+console.log(counter(500));
+console.log(counter());
+console.log(counter());
+console.log(counter(0));
+console.log(counter());
+console.log(counter());
+
+// Завдання 2
+console.log('Завдання 2:');
+
+const counterFactory = (function () {
+  let count = 0;
+  return {
+    value(n) {
+      if (n !== undefined) {
+        count = n;
+      }
+      return count;
+    },
+    increment() {
+      count++;
+    },
+    decrement() {
+      count--;
+    }
+  };
+})();
+
+console.log(counterFactory.value());
+counterFactory.increment();
+counterFactory.increment();
+counterFactory.increment();
+console.log(counterFactory.value());
+counterFactory.decrement();
+counterFactory.decrement();
+console.log(counterFactory.value());
+console.log(counterFactory.value(100));
+counterFactory.decrement();
+console.log(counterFactory.value());
+console.log(counterFactory.value(200));
+counterFactory.increment();
+console.log(counterFactory.value());
+
+// Завдання 3
+// console.log('Завдання 3:');
+
+
+// Завдання 4
+console.log('Завдання 4:');
+
+const list = [12, 23, 100, 34, 56, 9, 233];
+const myMax = (arr) => {
+  return Math.max.apply(null, arr);
+}
+
+console.log(myMax(list));
+
+// Завдання 5
+console.log('Завдання 5:');
+
+const myMul = (a, b) => a * b;
+const myDouble = myMul.bind(null, 2);
+
+console.log(myDouble(3));
+console.log(myDouble(4));
+console.log(myDouble(5));
+
+const myTriple = myMul.bind(null, 3);
+
+console.log(myTriple(3));
+console.log(myTriple(4));
+console.log(myTriple(5));

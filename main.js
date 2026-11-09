@@ -116,9 +116,6 @@ console.log('#5. JavaScript homework example file')
 
 
 
-// export { counter, counterFactory, myPow, myMax, myMul, myDouble, myTriple }
-
-
 
 // Завдання 1
 console.log('Завдання 1:');
@@ -182,8 +179,27 @@ counterFactory.increment();
 console.log(counterFactory.value());
 
 // Завдання 3
-// console.log('Завдання 3:');
+console.log('Завдання 3:');
 
+const myPrint = (a, b, res) => `${a}^${b}=${res}`;
+const myPow = (a, b, callback) => {
+  const raise = (num, power) => {
+    if (power === 0) {
+      return 1;
+    }
+    else if (power < 0) {
+      return 1 / raise(num, -power);
+    }
+    return num * raise(num, power - 1);
+  }
+  const res = raise(a, b);
+  return callback(a, b, res);
+};
+
+console.log(myPow(3, 4, myPrint));
+console.log(myPow(2, 3, myPrint));
+console.log(myPow(2, 0, myPrint));
+console.log(myPow(2, -2, myPrint));
 
 // Завдання 4
 console.log('Завдання 4:');
@@ -210,3 +226,7 @@ const myTriple = myMul.bind(null, 3);
 console.log(myTriple(3));
 console.log(myTriple(4));
 console.log(myTriple(5));
+
+
+
+export { counter, counterFactory, myPow, myMax, myMul, myDouble, myTriple }

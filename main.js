@@ -18,19 +18,17 @@ console.log('#6. JavaScript homework example file')
  */
 
 class CalorieCalculator {
-  constructor() {
-    this.products = new Map();
-  }
+  products = new Map();
 
   addProduct(productName, calories) {
     this.products.set(productName, calories);
   }
 
   getProductCalories(productName) {
-    if (this.products.has(productName)) {
-      return this.products.get(productName);
+    if (!this.products.has(productName)) {
+      return 'Product not found';
     }
-    else return 'Product not found';
+    return this.products.get(productName);
   }
 
   removeProduct(productName) {

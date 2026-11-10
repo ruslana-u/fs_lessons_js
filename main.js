@@ -129,6 +129,14 @@ const counter = (function () {
     return count++;
   };
 })();
+// let count = 0; 
+
+// const counter = function (n) {
+//   if (n !== undefined) {
+//     count = n;
+//   }
+//   return count++;
+// };
 
 console.log(counter());
 console.log(counter());
@@ -229,4 +237,4 @@ console.log(myTriple(5));
 
 
 
-export { counter, counterFactory, myPow, myMax, myMul, myDouble, myTriple }
+// export { counter, counterFactory, myPow, myMax, myMul, myDouble, myTriple }

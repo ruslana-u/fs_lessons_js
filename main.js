@@ -115,29 +115,21 @@ console.log('#5. JavaScript homework example file')
 // console.log(myTriple(5)) // = myMul(3, 5) = 15
 
 
-
-
 // Завдання 1
 console.log('Завдання 1:');
 
-const counter = (function () {
+function createCouter() {
   let count = 0;
-  return function (n) {
+   return function (n) {
     if (n !== undefined) {
       count = n;
     }
     return count++;
   };
-})();
-// let count = 0; 
+}
 
-// const counter = function (n) {
-//   if (n !== undefined) {
-//     count = n;
-//   }
-//   return count++;
-// };
-
+const counter = createCouter();
+  
 console.log(counter());
 console.log(counter());
 console.log(counter(100));
@@ -153,7 +145,7 @@ console.log(counter());
 // Завдання 2
 console.log('Завдання 2:');
 
-const counterFactory = (function () {
+function createCounterFactory() {
   let count = 0;
   return {
     value(n) {
@@ -169,7 +161,9 @@ const counterFactory = (function () {
       count--;
     }
   };
-})();
+}
+
+const counterFactory = createCounterFactory();
 
 console.log(counterFactory.value());
 counterFactory.increment();

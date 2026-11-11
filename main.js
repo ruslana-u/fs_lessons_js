@@ -64,9 +64,7 @@ console.log(calorieCalculator.getProductCalories('Apple')); // Product not found
  */
 
 class UniqueUsernames {
-  constructor() {
-    this.usernames = new Set();
-  }
+  usernames = new Set();
 
   addUser(username) {
     this.usernames.add(username);

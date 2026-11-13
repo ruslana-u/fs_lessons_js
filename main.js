@@ -1,126 +1,83 @@
+console.log('#8. JavaScript homework example file')
+
 /*
  * #1
  *
- * Розробити функцію, яка використовує метод reduce масиву для обчислення суми усіх елементів масиву чисел.
- Функція повинна приймати масив чисел та повертати їх суму.
-*/
+ * Задача: Створення та додавання DOM-елемента до вказаного контейнера
+ * Мета: Розробити функцію createDomElement, яка приймає назву тега, текстовий вміст та контейнер, до якого потрібно додати новий елемент. Функція створює новий елемент з вказаним тегом та текстовим вмістом і додає цей елемент до заданого контейнера.
+ *
+ * Вимоги:
+ * 1. Функція має приймати три параметри:
+ *    - tagName - рядок, що вказує на назву тега нового елемента.
+ *    - textContent - рядок, що вказує на текстовий вміст нового елемента.
+ *    - container - DOM-елемент, до якого буде додано новий створений елемент.
+ * 2. Функція має створити новий DOM-елемент з вказаним тегом і текстовим вмістом.
+ * 3. Створений елемент має бути доданий до вказаного контейнера.
+ * 4. Функція повертає посилання на створений елемент, що дозволяє подальшу взаємодію з ним.
+ * 5. Функція має бути експортована для використання в інших модулях та тестування.
+ */
 
-function sumArray(numbers) {
-  const sum = numbers.reduce((acc, currentValue) => acc + currentValue, 0);
-  return sum;
+function createDomElement(tagName, textContent, container) {
+  // code here
 }
 
-// Використання функції
-const exampleArray = [1, 2, 3, 4, 5];
-const sum = sumArray(exampleArray);
-console.log('Сума елементів масиву:', sum); // Виведення суми
-
+// Демонстрація використання функції
+// const container = document.body // В якості прикладу використовуємо body як контейнер
+// console.log(createDomElement('p', 'This paragraph has been added to the specified container.', container))
 
 /*
  * #2
  *
- * Розробити функцію, яка використовує метод map масиву для створення нового масиву, 
- * в якому кожен елемент буде вдвічі більшим за елементи вхідного масиву чисел.
-*/
+ * Задача: Встановлення cookie з корисною інформацією на 10 секунд
+ * Мета: Розробити функцію setUserInfoCookie, яка встановлює cookie з ім'ям userInfo та значенням у форматі "ключ=значення", яке зберігає корисну інформацію про користувача (наприклад, обрану мову інтерфейсу) та має термін дії 10 секунд. Значення cookie повинно бути відповідно закодовано для безпечного зберігання у веб-браузері.
+ *
+ * Вимоги до функції:
+ *
+ * 1. Функція приймає два аргументи: key (назва інформаційного параметра) та value (значення параметра).
+ * 2. Функція кодує значення параметра для коректного зберігання у cookie.
+ * 3. Функція встановлює cookie userInfo з закодованим значенням "ключ=значення" та встановлює термін його дії на 10 секунд.
+ * 4. При встановленні cookie, функція виводить інформаційне повідомлення у консоль про успішне зберігання даних.
+ */
 
-function doubleArrayElements(numbers) {
-  const doubled = numbers.map(number => number * 2);
-  return doubled;
+// setUserInfoCookie.js
+
+function setUserInfoCookie(key, value) {
+  // code here
 }
 
-// Використання функції
-const exampleArray_2 = [1, 2, 3, 4, 5, 6];
-const doubledArray = doubleArrayElements(exampleArray_2);
-console.log('Подвоєні елементи масиву:', doubledArray); // Виведення подвоєних елементів
-
+// Демонстрація використання функції
+// setUserInfoCookie('language', 'en');
 
 /*
  * #3
  *
- * Розробити клас `SkillsManager`, що відповідає за управління списком навичок. Клас повинен включати:
- * 1. Конструктор:
- * - Ініціалізує порожній масив `skills`, який буде використовуватися для зберігання навичок.
- * 2. Метод `addSkill(skill)`:
- * - Приймає один аргумент `skill` (рядок).
- * - Перевіряє, чи аргумент є рядком і має мінімум два символи.
- * - Якщо умови виконані, додає `skill` до масиву `skills` і повертає додану навичку.
- * - Якщо умови не виконані (навичка не є рядком або має менше двох символів), повертає `null`.
- * 3. Метод `getAllSkills()`:
- *   - Повертає поточний масив усіх навичок, збережених у класі.
+ * Задача: Робота з sessionStorage для зберігання та отримання даних користувача
+ * Мета: Створити дві функції, saveUserInfo і getUserInfo, для взаємодії з sessionStorage. Перша функція повинна зберігати інформацію про користувача, а друга - отримувати її. Крім того, обидві функції повинні виводити відповідні повідомлення у консоль про успішне збереження або отримання даних.
  *
- * Загальні вимоги:
- * - Клас має бути модульним і здатним до використання в інших частинах програми, тому він повинен бути експортований.
- * - Клас має забезпечувати легке управління навичками, включаючи додавання нових навичок та отримання списку всіх наявних навичок.
- * - Код має бути написаний з урахуванням принципів чистого коду, забезпечуючи читабельність та легкість підтримки.
-*/
-
-class SkillsManager {
-  skills = [];
-
-  addSkill(skill) {
-    if (typeof skill === 'string' && skill.length >= 2) {
-      this.skills.push(skill);
-      return skill;
-    }
-    return null;
-  };
-
-  getAllSkills() {
-    return this.skills;
-  };
-}
-
-const skillsManager = new SkillsManager();
-
-console.log(skillsManager.addSkill('JavaScript'));
-console.log(skillsManager.addSkill('CSS'));
-console.log(skillsManager.getAllSkills());
-
-
-/*
- * #4
- * Задача: Калькулятор дат.
- * Завдання: Створити модуль на JavaScript, який імплементує функцію-конструктор DateCalculator для створення об'єктів, здатних керувати датами. 
- * Калькулятор дат має надавати такі можливості:
- * Додавання днів: Метод addDays приймає кількість днів як аргумент і додає цю кількість до поточної дати об'єкта.
- * Віднімання днів: Метод subtractDays приймає кількість днів як аргумент і віднімає цю кількість від поточної дати об'єкта.
- * Отримання результату: Метод getResult повертає поточну дату об'єкта у форматі "YYYY-MM-DD".
+ * Вимоги до saveUserInfo:
  *
- * Критерії перевірки:
- * В модулі має бути визначена функція-конструктор DateCalculator, яка ініціалізує об'єкт з початковою датою.
- * Мають бути реалізовані та доступні методи addDays, subtractDays, та getResult для екземплярів DateCalculator.
- * Об'єкти DateCalculator мають створюватися за допомогою ключового слова new і використання функції-конструктора.
+ * 1. Функція приймає два параметри: ключ (key) та значення (value).
+ * 2. Зберігає пару ключ-значення в sessionStorage.
+ * 3. Виводить у консоль повідомлення формату "Saved key: value".
+ *
+ * Вимоги до getUserInfo:
+ *
+ * 1. Функція приймає один параметр: ключ (key).
+ * 2. Отримує значення за вказаним ключем з sessionStorage.
+ * 3. Виводить у консоль повідомлення формату "Retrieved key: value", де value - це значення, отримане з sessionStorage.
+ * 4. Повертає значення отримане з sessionStorage.
  */
 
-function DateCalculator(initialDate) {
-  this.date = new Date(initialDate);
-
-  this.addDays = function (days) {
-    this.date.setDate(this.date.getDate() + days);
-  };
-
-  this.subtractDays = function (days) {
-    this.date.setDate(this.date.getDate() - days);
-  };
-
-  this.getResult = function () {
-    // return this.date.toISOString();
-    const year = this.date.getFullYear();
-    const month = this.date.getMonth() + 1;
-    const day = this.date.getDate();
-    return `${year}-${month}-${day}`;
-  };
+function saveUserInfo(key, value) {
+  // code here
 }
 
-// Демонстрація використання
-const dateCalculator = new DateCalculator('2023-01-01');
+function getUserInfo(key) {
+  // code here
+}
 
-dateCalculator.addDays(5);
-console.log(dateCalculator.getResult()); // Виводить нову дату після додавання днів
-//
-dateCalculator.subtractDays(3);
-console.log(dateCalculator.getResult()); // Виводить нову дату після віднімання днів
+// Демонстрація використання функцій
+// saveUserInfo('username', 'JohnDoe');
+// console.log(getUserInfo('username')); // Виведе: JohnDoe
 
-
-
-// export { doubleArrayElements, sumArray, SkillsManager, DateCalculator }
+export { createDomElement, setUserInfoCookie, saveUserInfo, getUserInfo }

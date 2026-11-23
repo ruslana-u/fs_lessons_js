@@ -4,9 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-
+    <main class="page">
+      <h1>Фільтр за ціною</h1>
+      <div class="rangeSlider" id="priceSlider">
+        <div class="rangeSlider__track">
+          <div class="rangeSlider__fill"></div>
+          <div
+            class="rangeSlider__thumb"
+            data-thumb="from"
+            role="slider"
+            tabindex="0"
+            aria-label="Мінімальна ціна"
+          ></div>
+          <div
+            class="rangeSlider__thumb"
+            data-thumb="to"
+            role="slider"
+            tabindex="0"
+            aria-label="Максимальна ціна"
+          ></div>
+        </div>
+        <div class="rangeSlider__inputs">
+          <label class="rangeSlider__label">
+            Від
+            <input type="number" class="rangeSlider__input" data-input="from" />
+          </label>
+          <span class="rangeSlider__dash">-</span>
+          <label class="rangeSlider__label">
+            До
+            <input type="number" class="rangeSlider__input" data-input="to" />
+          </label>
+        </div>
+        <p class="result">Обрано: <output id="result"></output></p>
+      </div>
+    </main>
     <script src="./script.js"></script>
   </body>
 </html>

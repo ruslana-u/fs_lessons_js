@@ -38,7 +38,42 @@
             <input type="number" class="rangeSlider__input" data-input="to" />
           </label>
         </div>
-        <p class="result">Обрано: <output id="result"></output></p>
+        <p class="result">Обрано: <output id="priceResult"></output></p>
+      </div>
+    </main>
+
+    <main class="page">
+      <h1>Рік випуску</h1>
+      <div class="rangeSlider" id="yearSlider">
+        <div class="rangeSlider__track">
+          <div class="rangeSlider__fill"></div>
+          <div
+            class="rangeSlider__thumb"
+            data-thumb="from"
+            role="slider"
+            tabindex="0"
+            aria-label="Рік від"
+          ></div>
+          <div
+            class="rangeSlider__thumb"
+            data-thumb="to"
+            role="slider"
+            tabindex="0"
+            aria-label="Рік до"
+          ></div>
+        </div>
+        <div class="rangeSlider__inputs">
+          <label class="rangeSlider__label">
+            Від
+            <input type="number" class="rangeSlider__input" data-input="from" />
+          </label>
+          <span class="rangeSlider__dash">-</span>
+          <label class="rangeSlider__label">
+            До
+            <input type="number" class="rangeSlider__input" data-input="to" />
+          </label>
+        </div>
+        <p class="result">Обрано: <output id="yearResult"></output></p>
       </div>
     </main>
     <script src="./script.js"></script>
